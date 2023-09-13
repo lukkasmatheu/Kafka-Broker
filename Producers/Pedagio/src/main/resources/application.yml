@@ -1,0 +1,24 @@
+server:
+  port: 8080
+cloud:
+  aws:
+    region:
+      static: sa-east-1
+    stack:
+      auto: false
+    credentials:
+      access-key: admin
+      secret-key: admin
+    fila:
+      cadastra_cliente: http://localhost:9324/queue/cadastra_cliente
+advertised:
+  host:
+    name: localhost
+## Adicionado para corrigir erro:
+## com.amazonaws.SdkClientException: Failed to connect to service endpoint
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
